@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "PlayHook",
+  "version": "1.9",
+  "description": "Keyboard shortcuts for controlling video playback on any website (seek, play/pause, speed, mute, fullscreen).",
+  "permissions": ["storage", "activeTab"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PlayHook",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
